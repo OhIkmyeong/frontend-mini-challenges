@@ -1,0 +1,14 @@
+@charset "utf-8";
+#counter-result{
+    margin-bottom:1rem;
+    font-size:5rem; font-weight:bold;}
+#counter-form{
+    display:flex; flex-flow:column nowrap;
+    align-items:center;
+    gap:1rem;
+}
+.ipt-per{width:4em;}
+
+.btn-reset{
+    margin-top:2rem;
+    width:100%;}

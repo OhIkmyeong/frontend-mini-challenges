@@ -1,3 +1,119 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-body{width:100%; min-height:100vh;}
+a{text-decoration:none; font-family:inherit; font-size:inherit; color:inherit;}
+
+:root{
+    --black:#3b3d4c;
+    --blur: 0px;
+    --hue1: 100deg;
+    --hue2: calc(var(--hue1) + 60deg);
+    --sat1: 50%;
+    --sat2: calc(var(--sat1) + 10%);
+    --gradgap: 30%;
+    --gradoffset: 45%;
+    --clr1: hsl(var(--hue1), var(--sat1), 90%);
+    --clr2: hsl(var(--hue2), var(--sat2), 85%);
+    --text: hsla(var(--hue1), 70%, 10%, .9);
+    --font: "Noto Sans", sans-serif;
+}
+
+/* Aqua Button : https://codepen.io/simeydotme/pen/MWXxKrP */
+button{
+    position:relative;
+    padding: .8em 1.5em;
+    background-color: var(--clr1);
+    background-image: linear-gradient(180deg, var(--clr2) var(--gradgap), transparent calc(100% - var(--gradgap)));
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    border: none; border-radius: 2em;
+    letter-spacing: -0.025em;
+    text-align:center; font-family:inherit; font-size:inherit; color:var(--black);
+    box-shadow: 0 -0.5em 0.5em transparent, 0 0.5em 0.5em transparent, 0 0.25em 0.3em -0.2em hsla(var(--hue1), var(--sat1), 50%, 0.46), 0 0.25em 0.75em hsla(var(--hue1), calc(var(--sat1) - 10%), 40%, 0.3);
+    transition: all 0.5s ease;
+    cursor:pointer;
+    user-select:none;
+}
+
+button::before,
+button::after{
+    content: "";
+    inset: 0;
+    position: absolute;
+    border-radius: 5em;
+}
+
+button::before {
+    background-image: radial-gradient(ellipse, hsla(var(--hue1), 100%, 90%, 0.8) 20%, transparent 50%, transparent 200%), linear-gradient(90deg, #404040 -10%, transparent 30%, transparent 70%, #404040 110%);
+    background-repeat: no-repeat;
+    background-position: center 220%;
+    background-size: 200% 80%, cover;
+    box-shadow: inset 0 0.25em 0.75em rgba(0, 0, 0, 0.8), inset 0 -0.05em 0.2em rgba(255, 255, 255, 0.4), inset 0 -1px 3px hsla(var(--hue1), 80%, 50%, 0.75);
+    background-blend-mode: overlay;
+    mix-blend-mode: overlay;
+    filter: blur(calc(var(--blur) * 0.5));
+}
+ 
+button::after {
+    top: 0.075em;
+    left: 0.75em;
+    right: 0.75em;
+    bottom: 1.4em;
+    background: linear-gradient(180deg, hsla(var(--hue2), 100%, 90%, 0.9), hsla(var(--hue2), 70%, 50%, 1) 40%, transparent 80%);
+    filter: blur(var(--blur));
+    mix-blend-mode: screen;
+}
+
+body{
+    width:100%; min-height:100vh;
+    background:#f0f1f5;
+    font-family: 'Outfit', sans-serif;
+    font-size:18px; color:var(--black);
+}
+
+/* input */
+input{
+    display:inline-block;
+    width:auto;
+    padding:10px;
+    border:1px solid #aaa;
+    border-radius:4px;
+    font-family:inherit;font-size:inherit;color:inherit;
+}
+
+/* 📌[header] */
+#hdr{
+    display:flex; flex-flow:row wrap;
+    justify-content:space-between; align-items:center;
+    position:relative;
+    width:100%;
+    padding:1rem 1.2rem;
+    background:#fff;
+    border-bottom:1px solid rgb(219, 227, 227);
+    text-align:center; font-size:18px;
+    box-shadow:0 5px 10px rgba(174, 187, 193, .1);
+}
+
+/* header-list */
+.hdr-link-list{
+    display:inline-block;
+    padding:10px 0;
+    font-size:13px; color:#999;}
+
+/* header-title */
+.hdr-title{
+    text-transform:uppercase;
+    font-size:1.5rem; font-weight:bold;
+}
+/* header-git */
+.hdr-link-git img{width:30px;}
+
+/* 📌[MAIN] */
+main{
+    display:flex;flex-flow:column nowrap;
+    justify-content:center; align-items:center;
+    position:relative;
+    width:100%; min-height:calc(100vh - 70px);
+    padding:1rem;
+}

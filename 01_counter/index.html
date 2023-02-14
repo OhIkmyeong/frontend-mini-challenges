@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01-Counter</title>
+    <title>Counter</title>
     <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
     <script src="./main.js" type="module"></script>
 </head>
 <body>
-    
+<main>
+    <div id="counter-result">${0}</div>
+    <form id="counter-form">
+        <div class="counter-form-btns">
+            <button class="btn-min" data-btn="min">-</button>
+            <button class="btn-pls" data-btn="pls">+</button>
+        </div>
+        <div class="counter-form-per">
+            <span>Increase/Decrement by</span>
+            <input type="number" class="ipt-per" value="1" min="1" max="100"/>
+        </div>
+        <button class="btn-reset" data-btn="rst">RESET</button>
+    </form>
+</main>
 </body>
 </html>
