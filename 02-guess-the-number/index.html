@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <h5>Enter a Guess Between <strong>0</strong> to <strong>100</strong></h5>
+    <form id="form-guess">
+        <input type="number" id="ipt-guess" placeholder="Enter a Number" min="0" max="100"/>
+        <button type="submit" id="btn-smt">SUBMIT</button>
+    </form>
+
+    <section class="gs-res off">
+        <div id="gs-res-hint">Too Low / Too High</div>
+        <div id="gs-res-list">Your Guesses : ${0},${0}</div>
+        <button id="btn-reset">RESTART GAME</button>
+    </section>
+</main>
+</body>
+</html>

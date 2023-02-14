@@ -1,0 +1,77 @@
+@charset "utf-8";
+h5{
+    margin-bottom:2rem;
+    font-size:1.5rem;}
+
+#form-guess{
+    position:relative;
+    width:100%; max-width:400px;
+}
+
+#ipt-guess{
+    display:block;
+    width:100%; 
+    height:52px;
+    margin:0 auto;
+    padding-left:1em; padding-right:calc(116px + 1em);
+    border-radius:30px;
+}
+
+#btn-smt{
+    position:absolute;
+    right:0;top:0;
+}
+
+/*  */
+.gs-res{
+    display:flex;flex-flow:column nowrap;
+    justify-content:center; align-items:center;
+    position:relative;
+    margin-top:2rem;
+    transition:opacity .2s;
+}
+    /* off */
+    .gs-res.off{
+        opacity:0;
+        pointer-events:none;
+    }
+
+#gs-res-hint{
+    margin-bottom:2rem; padding-top:2rem;
+    border-top:1px dashed #000;
+    font-size:1.5rem;
+}
+#gs-res-hint strong{
+    display:inline-block;
+    padding:.6em .7em; margin-left:.3em;
+    background:rgb(6, 158, 108); color:#fff;
+    border-radius:50%;
+    font-size:1.2em;
+}
+#gs-res-hint strong.wrong{
+    background:red;
+}
+
+#gs-res-list:not(:empty){
+    position:relative;
+    padding:1em;
+    background:#fff;
+}
+
+#gs-res-list:not(:empty)::before{
+    content : 'Your Guesses : ';
+    color:#999;
+}  
+
+#gs-res-list span{
+    font-weight:bold;
+}
+
+#gs-res-list span:not(:last-child)::after{
+    content:', ';
+    font-size:1.2rem; color:#999;
+}
+
+#btn-reset{
+    margin-top:2rem;
+}

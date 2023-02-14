@@ -36,6 +36,11 @@ button{
     user-select:none;
 }
 
+button:disabled{
+    opacity:0.3;
+    cursor:not-allowed;
+}
+
 button::before,
 button::after{
     content: "";

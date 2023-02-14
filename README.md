@@ -12,6 +12,9 @@ Frontend Mini Challenges (by sadanandpai)
 ----------------------------
 ## 😊 My Answers
 0. [목록 보기](https://ohikmyeong.github.io/frontend-mini-challenges)
-1. [Counter](https://ohikmyeong.github.io/frontend-mini-challenges/01_counter)
+1. [Counter](https://ohikmyeong.github.io/frontend-mini-challenges/01-counter)
     * [Answer-Demo](https://sadanandpai.github.io/frontend-mini-challenges/src/mc/counter/)
     * [Answer-Github](https://github.com/sadanandpai/frontend-mini-challenges/tree/main/src/mc/counter)
+1. [Guess the Number](https://ohikmyeong.github.io/frontend-mini-challenges/02-guess-the-number)
+    * [Answer-Demo](https://sadanandpai.github.io/frontend-mini-challenges/src/mc/guess-the-number/)
+    * [Answer-Github](https://github.com/sadanandpai/frontend-mini-challenges/tree/main/src/mc/guess-the-number)
