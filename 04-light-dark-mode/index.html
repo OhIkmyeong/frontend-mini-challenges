@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>light-dark-mode</title>
     <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
     <script src="./../common/common.js" defer></script>
@@ -12,7 +12,21 @@
 </head>
 <body>
 <main>
-    
+    <label class="btn-aqua">
+        <input type="checkbox" id="toggle-theme" title="Dark Mode">
+        <span>Dark Mode</span>
+    </label>
+    <h2 style="margin-top:1em;">The Entire Page Color Theme is Controlled Using CSS and JavaScript</h2>
+
+    <div style="display:flex; flex-flow:row wrap; gap:5px; position:relative;margin-top:60px;">
+        <input type="checkbox" id="toggle-scheme" title="Dark Mode">
+        <label for="toggle-scheme">
+            <span>Contained Dark Mode</span>
+        </label>
+        <div id="sample">
+            The Container Color Scheme is Controlled By <strong>Only CSS</strong>
+        </div>
+    </div>
 </main>
 </body>
 </html>

@@ -1,0 +1,21 @@
+@charset "utf-8";
+.dark{
+    --bg :#3b3d4c;
+    --white:#171821;
+    --black:#fff;
+    --border-light:1px solid rgb(26, 29, 29);
+}
+
+#sample{
+    position:relative;
+    width:100%;
+    padding:2rem;
+    background:#fff;
+    color:#3b3d4c;
+    border:1px solid var(--black);
+}
+
+#toggle-scheme:checked ~ #sample{
+    background:#171821;
+    color:#fff;
+}

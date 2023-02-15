@@ -4,6 +4,8 @@
 a{text-decoration:none; font-family:inherit; font-size:inherit; color:inherit;}
 
 :root{
+    --bg:#f0f1f5;
+    --white:#fff;
     --black:#3b3d4c;
     --blur: 0px;
     --hue1: 100deg;
@@ -16,10 +18,13 @@ a{text-decoration:none; font-family:inherit; font-size:inherit; color:inherit;}
     --clr2: hsl(var(--hue2), var(--sat2), 85%);
     --text: hsla(var(--hue1), 70%, 10%, .9);
     --font: "Noto Sans", sans-serif;
+
+    --border-light:1px solid rgb(219, 227, 227);
 }
 
 /* Aqua Button : https://codepen.io/simeydotme/pen/MWXxKrP */
-button{
+button,
+.btn-aqua{
     position:relative;
     padding: .8em 1.5em;
     background-color: var(--clr1);
@@ -29,7 +34,7 @@ button{
     background-size: 100% 200%;
     border: none; border-radius: 2em;
     letter-spacing: -0.025em;
-    text-align:center; font-family:inherit; font-size:inherit; color:var(--black);
+    text-align:center; font-family:inherit; font-size:inherit; color:#3b3d4c;
     box-shadow: 0 -0.5em 0.5em transparent, 0 0.5em 0.5em transparent, 0 0.25em 0.3em -0.2em hsla(var(--hue1), var(--sat1), 50%, 0.46), 0 0.25em 0.75em hsla(var(--hue1), calc(var(--sat1) - 10%), 40%, 0.3);
     transition: all 0.5s ease;
     cursor:pointer;
@@ -42,14 +47,17 @@ button:disabled{
 }
 
 button::before,
-button::after{
+button::after,
+.btn-aqua::before,
+.btn-aqua::after{
     content: "";
     inset: 0;
     position: absolute;
     border-radius: 5em;
 }
 
-button::before {
+button::before,
+.btn-aqua::before {
     background-image: radial-gradient(ellipse, hsla(var(--hue1), 100%, 90%, 0.8) 20%, transparent 50%, transparent 200%), linear-gradient(90deg, #404040 -10%, transparent 30%, transparent 70%, #404040 110%);
     background-repeat: no-repeat;
     background-position: center 220%;
@@ -60,7 +68,8 @@ button::before {
     filter: blur(calc(var(--blur) * 0.5));
 }
  
-button::after {
+button::after,
+.btn-aqua::after {
     top: 0.075em;
     left: 0.75em;
     right: 0.75em;
@@ -72,7 +81,7 @@ button::after {
 
 body{
     width:100%; min-height:100vh;
-    background:#f0f1f5;
+    background:var(--bg);
     font-family: 'Outfit', sans-serif;
     font-size:18px; color:var(--black);
 }
@@ -94,8 +103,8 @@ input{
     position:relative;
     width:100%;
     padding:1rem 1.2rem;
-    background:#fff;
-    border-bottom:1px solid rgb(219, 227, 227);
+    background:var(--white);
+    border-bottom:var(--border-light);
     text-align:center; font-size:18px;
     box-shadow:0 5px 10px rgba(174, 187, 193, .1);
 }
@@ -113,6 +122,10 @@ input{
 }
 /* header-git */
 .hdr-link-git img{width:30px;}
+.dark .hdr-link-git img{
+    filter:invert();
+    mix-blend-mode:color-dodge;
+}
 
 /* 📌[MAIN] */
 main{
