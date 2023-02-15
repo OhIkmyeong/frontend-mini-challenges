@@ -42,15 +42,16 @@
         "telephone-formatter",
         "light-dark-mode",
         "toast-popup",
+        "css-shapes"
     ]
     const urlDefault = "https://ohikmyeong.github.io/frontend-mini-challenges/"
     
     const $frag = document.createDocumentFragment();
 
-    list.forEach((item,idx) =>{
+    list.forEach((item) =>{
         const $a = document.createElement('A');
         $a.classList.add('item');
-        $a.href = urlDefault+`${String(idx + 1).padStart(2,"0")}-${item}`;
+        $a.href = urlDefault+item;
         $a.textContent = item.replaceAll('-',' ').toUpperCase();
         $frag.appendChild($a);
     });
