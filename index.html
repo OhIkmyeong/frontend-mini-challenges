@@ -39,7 +39,8 @@
     const list = [
         "counter",
         "guess-the-number",
-        "telephone-formatter"
+        "telephone-formatter",
+        "light-dark-mode",
     ]
     const urlDefault = "https://ohikmyeong.github.io/frontend-mini-challenges/"
     
@@ -48,7 +49,7 @@
     list.forEach((item,idx) =>{
         const $a = document.createElement('A');
         $a.classList.add('item');
-        $a.href = urlDefault+`${String(idx).padStart(2,"0")}-item`;
+        $a.href = urlDefault+`${String(idx).padStart(2,"0")}-${item}`;
         $a.textContent = item.replaceAll('-',' ').toUpperCase();
         $frag.appendChild($a);
     });
