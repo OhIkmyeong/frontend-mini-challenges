@@ -87,7 +87,8 @@ body{
 }
 
 /* input */
-input{
+input:not([type="range"]),
+select{
     display:inline-block;
     width:auto;
     padding:10px;

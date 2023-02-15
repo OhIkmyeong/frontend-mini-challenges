@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toast-popup</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <form id="form-tp">
+        <select id="tp-pos-x" title="toast popup coord X">
+            <option value="left">left</option>
+            <option value="right">right</option>
+        </select>
+        <select id="tp-pos-y" title="toast popup coord Y">
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+        </select>
+        <select id="tp-type" title="toast popup type">
+            <option value="success">success</option>
+            <option value="error">error</option>
+            <option value="warning">warning</option>
+            <option value="info">info</option>
+        </select>
+        <input type="text" id="tp-message" value="This is a Toast Message!" placeholder="Enter Mesasge" title="Toast Message" required/>
+        <label style="text-align:center;width:100%;margin:20px 0;">
+            <span>Duration(1.5 ~ 10s)</span>
+            <input type="range" id="tp-duration" min="1500" max="10000" value="3000" step="500" title="toast popup duration"/>
+        </label>
+        <button type="submit" title="display toast popup" style="width:100%;">Show Toast!</button>
+    </form>
+
+    <template>
+        <section class="toast-popup-container right top">
+            <div class="toast-popup success">
+                <p class="message">1</p>
+                <button class="btn-tp-del">✕</button>
+            </div>
+            <div class="toast-popup error">
+                <p class="message">2</p>
+                <button class="btn-tp-del">✕</button>
+            </div>
+            <div class="toast-popup warning">
+                <p class="message">3</p>
+                <button class="btn-tp-del">✕</button>
+            </div>
+            <div class="toast-popup info">
+                <p class="message">10000</p>
+                <button class="btn-tp-del">✕</button>
+            </div>
+        </section>
+    </template>
+</main>
+</body>
+</html>
