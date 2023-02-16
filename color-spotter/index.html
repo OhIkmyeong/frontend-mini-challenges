@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color-spotter</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <div id="score" data-info="Score">0</div>
+    <div id="score-max" data-info="Max Score">0</div>
+    <form oninput="sizeStartOutput.value = sizeStart.value">
+        <label>
+            <span>Select Starting Size</span>
+            <input id="sizeStart" type="range" value="4" min="2" max="6"/>
+        </label>
+        <output id="sizeStartOutput" for="sizeStart"></output>
+    </form>
+    <section id="board"></section>
+</main>
+</body>
+</html>
