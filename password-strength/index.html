@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password-strength</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <!-- progress와 meter중 meter를 쓰겠음..하려고 했는데 색상값 차이때문에 폐기 -->
+    <h3 style="margin-bottom:1rem;">Enter the Password</h3>
+    <form id="form-pw">
+        <input 
+            type="password" 
+            id="ipt-pw" 
+            placeholder="Password"
+            style="width:100%;max-width:300px;margin-bottom:1rem;"
+            minlength="4"
+            maxlength="13"
+            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{4,16}$"
+            autocomplete="new-password"
+            required
+            />
+        <!-- <meter
+            id="pw-meter"
+            min="0"
+            max="100"
+            low="33" 
+            style="width:100%;max-width:300px;height:30px;"
+        ></meter> -->
+        <div 
+            id="pw-meter-cont"
+            style="position:relative;overflow:hidden;width:100%;max-width:300px; height:10px;border:1px solid #000;border-radius:50px;"
+        >
+            <div 
+                id="pw-meter"
+                style="position:absolute;width:0%;height:100%;top:0;left:0;background:black;transition:all .1s"
+            >
+            </div>
+        </div>
+    </form>
+</main>
+</body>
+</html>
