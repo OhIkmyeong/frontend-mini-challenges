@@ -1,0 +1,46 @@
+@charset "utf-8";
+#wrap-star-rating{
+    display:flex;
+    justify-content:center; align-items:center;
+    position:relative;
+    margin-bottom:2rem;
+}
+.lbl-star{
+    display:block;position:relative;
+    aspect-ratio:1/1;
+}
+.lbl-star input{
+    position:absolute;overflow:hidden;
+    width:1px;height:1px;
+}
+
+.lbl-star .star{
+    font-size:60px;
+    cursor:pointer;
+    text-shadow:
+        1px 0px 0 rgb(0,0,0),
+        -1px 0px 0 rgb(0,0,0),
+        0px -1px 0 rgb(0,0,0),
+        0px 1px 0 rgb(0,0,0),
+        -1px 1px 0 rgb(0,0,0),
+        -1px -1px 0 rgb(0,0,0),
+        1px -1px 0 rgb(0,0,0),
+        1px 1px 0 rgb(0,0,0);
+}
+
+.lbl-star .star::after{
+    content:'★';
+    color:rgb(168, 168, 168);
+    pointer-events:none; user-select:none;
+}
+
+.lbl-star .star.rating::after{
+    color:rgb(154, 103, 16);
+}
+
+.lbl-star .star.rated::after{
+    color:rgb(255, 221, 0);
+}
+
+/*  */
+#star-emoji{font-size:30vmin;}
