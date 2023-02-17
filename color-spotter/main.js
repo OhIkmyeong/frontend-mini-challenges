@@ -76,6 +76,7 @@ class ColorSpotter{
      */
     update_score(num=0){
         this.#score += num;
+        if(this.#score < 0) this.#score = 0;
         this.$score.textContent = this.#score;
         if(this.#score > this.#scoreMax) this.update_max_score();
     }//update_score
@@ -192,13 +193,15 @@ class ColorSpotter{
             this.toggle_able_size();
         }
 
+        if(!(e.target.classList.contains('cell'))) return;
+
         if(e.target.classList.contains('cell-odd')){
             /* 옳게 클릭했을시 */
             this.update_score(Number(this.#size));
             this.#size++;
 
             /* [승리]일정 점수 초과 */
-            if(this.#score >= 100){
+            if(this.#score >= 200){
                 this.win();
                 return;
             }
