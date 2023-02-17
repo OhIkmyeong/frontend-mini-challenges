@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo-list</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <form id="form-todo">
+        <input type="text" id="todo-ipt" placeholder="Write Something To Do.." title="todo input" autocomplete="off" required/>
+        <button type="submit" id="todo-submit">ADD ITEM</button>
+        <button type="button" id="todo-reset">RESET</button>
+    </form>
+    
+    <div id="wrap-todo">
+        <ul id="todo"></ul>
+    </div>
+
+    <template>
+        <li class="todo-item">
+            <div class="todo-item-inwrap">
+                <input type="text" class="todo-item-text" value="JavaScript"  readonly>
+                <button class="todo-item-modify" title="수정" data-modify="off">✏️</button>
+                <button class="todo-item-delete" title="삭제">🗑️</button>
+            </div>
+        </li>
+    </template>
+</main>
+</body>
+</html>

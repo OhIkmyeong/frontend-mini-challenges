@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+#form-todo{
+    position:relative;
+    width:100%; max-width:500px;
+}
+#todo-ipt{
+    display:block;
+    width:100%; height:50px;
+    padding-right:140px;
+    border-radius:50px;
+}
+#todo-submit{
+    position:absolute;
+    right:0;top:0;
+    height:50px;
+}
+#todo-reset{
+    display:block;
+    margin:10px auto;
+    font-size:14px;
+}
+/* wrap-todo */
+#wrap-todo{
+    position:relative;
+    overflow-x:hidden; overflow-y:auto;
+    width:100%; max-width:500px;
+    height:calc(100vh - 300px);
+    padding:10px; margin-top:1rem;
+    background:rgba(0,0,0,.06);
+    border:var(--border-light);
+}
+/* todo */
+#todo{
+    display:flex; flex-flow:column-reverse nowrap;
+    justify-content:flex-end; align-items:flex-end;
+    gap:10px;
+    position:relative;
+    width:100%;
+}
+    /* empty */
+    #todo:empty::after{
+        content:"try Add Something To DO!";
+        display:block;position:absolute;
+        width:100%;
+        top:45%;
+        text-transform:uppercase;
+        text-align:center; font-size:1.5rem;color:#aaa;
+    }
+
+/* item */
+.todo-item{
+    position:relative;
+    width:100%;
+    background:var(--bg);
+    border-radius:4px;
+    animation: show-item .3s ease-in-out both;
+}
+
+.todo-item-inwrap{
+    position:relative;
+    display:flex;flex-flow:row nowrap;
+    justify-content:flex-start;align-items:center;
+    gap:5px;
+    width:100%;
+    padding:10px 1em 10px 10px;
+    background:var(--white);
+    border:var(--border-light);
+}
+
+.todo-item.remove .todo-item-inwrap{
+    animation: remove-item .3s ease-in-out both;
+}
+
+    @keyframes show-item {
+        from{opacity:0;transform:translateX(100%);}
+    }
+
+    @keyframes remove-item {
+        to{transform:translateX(-100%); opacity:0;}
+    }
+
+input.todo-item-text{
+    display:block;
+    width:100%;
+    background:var(--bg);
+    border:none;
+    color:rgb(34, 106, 77);
+}
+
+    /* readonly */
+    .todo-item-text:read-only{
+        background:transparent;
+        pointer-events:none;
+        color:var(--black);
+    }
+.todo-item-modify,
+.todo-item-delete{
+    padding:1em 1.2em;
+    font-size:13px;
+}
+
+.todo-item-delete{
+    --clr1:hsl(60deg, 100%, 90%);
+    --clr2:hsl(0deg, 100%, 90%);
+}

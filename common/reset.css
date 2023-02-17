@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
 a{text-decoration:none; font-family:inherit; font-size:inherit; color:inherit;}
+li{list-style-type:none;}
 
 :root{
     --bg:#f0f1f5;
@@ -96,6 +97,8 @@ select{
     border-radius:4px;
     font-family:inherit;font-size:inherit;color:inherit;
 }
+
+input::placeholder{color:#aaa; font-weight:normal;}
 
 /* 📌[header] */
 #hdr{
