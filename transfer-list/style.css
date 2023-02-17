@@ -1,0 +1,69 @@
+@charset "utf-8";
+#wrap-tf-list{
+    display:flex;flex-flow:row wrap;
+    justify-content:space-between;
+    position:relative; overflow:hidden;
+    width:100%; max-width:1400px;
+    border:var(--border-light); border-radius;10px;
+}
+
+/* [LIST] */
+#tf-list-left,
+#tf-list-right{
+    position:relative;
+    width:calc((100% - 100px) / 2);
+    padding:10px;
+    background:var(--white);
+}
+
+.tf-list-item{
+    position:relative;
+    width:100%;
+    margin-bottom:10px;
+    background:var(--bg);
+    border:var(--border-light); border-radius:10px;
+}
+.tf-list-item label{
+    display:block;
+    padding:.5rem 1rem;
+    cursor:pointer;
+}
+.tf-list-item input ~ span{margin-left:.5em;}
+.tf-list-item input:checked ~ span{font-weight:bold;color:royalblue;}
+
+/* [BUTTONS] */
+#tf-list-btns{
+    display:flex;flex-flow:column nowrap;
+    justify-content:center; align-items:center;
+    gap:20px;
+    position:relative;
+    padding:20px 0;
+    width:100px;
+    text-align:center; font-size:14px;
+}
+#tf-list-btns button{width:80px;}
+
+#tf-left-all,
+#tf-right-all{
+    --hue1:0deg;
+    --clr1:hsl(0deg,100%,80%);
+    --clr2:hsl(0deg,100%,100%);
+}
+
+#tf-left{margin-bottom:20px;}
+
+/* 미디어쿼리 */
+@media all and (max-width:1000px){
+/* [LIST] */
+#tf-list-left,
+#tf-list-right{
+    width:100%;
+}
+/* [BUTTONS] */
+#tf-list-btns{
+    flex-flow:row wrap;
+    width:100%;
+}
+#tf-list-btns button{margin-bottom:0;}
+
+}/* 미디어쿼리 */
