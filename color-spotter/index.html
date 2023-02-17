@@ -12,16 +12,17 @@
 </head>
 <body>
 <main>
-    <div id="score" data-info="Score">0</div>
-    <div id="score-max" data-info="Max Score">0</div>
-    <form oninput="sizeStartOutput.value = sizeStart.value">
+    <div id="score" data-info="score">${0}</div>
+    <div id="score-max" data-info="max score so far">${0}</div>
+    <div id="life" data-info="life">${0}</div>
+    <form id="form-cp" oninput="sizeStartOutput.value = sizeStart.value">
         <label>
             <span>Select Starting Size</span>
-            <input id="sizeStart" type="range" value="4" min="2" max="6"/>
+            <input id="sizeStart" type="range" min="2" max="6"/>
         </label>
-        <output id="sizeStartOutput" for="sizeStart"></output>
+        <output id="sizeStartOutput" for="sizeStart">${0}</output>
     </form>
-    <section id="board"></section>
+    <section id="board-cp"></section>
 </main>
 </body>
 </html>
