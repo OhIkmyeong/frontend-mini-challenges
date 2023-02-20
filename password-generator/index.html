@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password-generator</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <section id="wrap-pw-gnr">
+        <form id="form-pw-gnr" oninput="pwGnrLengthOutput.value = pwGnrLength.value">
+            <fieldset>
+                <legend>result</legend>
+                <input id="pw-gnr" type="text" placeholder="Gereated Password" title="randomly generated password" readonly/>
+                <button id="pw-gnr-copy" type="button" title="copy password"></button>
+            </fieldset>
+            <fieldset>
+                <legend>length</legend>
+                <div>
+                    Character length
+                    <output id="pwGnrLengthOutput" for="pw-gnr-length">10</output>
+                </div>
+                <input id="pwGnrLength"type="range" min="6" max="24" value="10" step="1"/>
+            </fieldset>
+            <fieldset>
+                <legend>type</legend>
+                <label>
+                    <input type="checkbox" name="pw-gnr-type" value="lower" checked/><span>Include LowerCase</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="pw-gnr-type" value="upper"/><span>Include UpperCase</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="pw-gnr-type" value="numeric" checked/><span>Include Numbers</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="pw-gnr-type" value="symbols"/><span>Include Symbols</span>
+                </label>
+            </fieldset>
+            <button id="pw-gnr-submit">Generate</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>

@@ -95,6 +95,7 @@ class ChipsInput{
     }//remove_item
 
     remove_item_all = _ =>{
+        this.$ipt.value = '';
         const $$item = this.$result.querySelectorAll('.cipt-item');
         $$item.forEach(($item,idx)=>{
             setTimeout(()=>{
