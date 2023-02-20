@@ -1,0 +1,24 @@
+@charset "utf-8";
+#chess-board{
+    --wid-cell:50px;
+    position:relative;
+    margin-bottom:2rem;
+    border:1px solid var(--black);
+}
+
+.chess-board-row{
+    display:flex;
+}
+
+.cell{
+    width:var(--wid-cell);aspect-ratio:1/1;
+    border:1px solid var(--black);
+    cursor:pointer;
+}
+
+.cell.cell-black{background:var(--black);}
+.cell.cell-white{background:var(--white);}
+
+.cell.cell-balck.cell-red,
+.cell.cell-white.cell-red,
+.cell.cell-red{background:rgb(230, 60, 9);}
