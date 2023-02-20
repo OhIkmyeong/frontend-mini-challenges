@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chips-input</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <form id="cipt-form">
+        <input id="cipt" type="text" placeholder="Type & Hit Enter" title="Add Chips" required/>
+        <button id="cipt-submit" type="submit">ENTER</button>
+    </form>
+    
+    <section id="cipt-result"></section>
+
+    <template>
+        <div class="cipt-item">
+            <p class="cipt-item-text">Hello World</p>
+            <button class="cipt-item-del" title="delete chip">❌</button>
+        </div>
+    </template>
+</main>
+</body>
+</html>
