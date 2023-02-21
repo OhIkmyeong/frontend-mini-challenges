@@ -1,0 +1,67 @@
+@charset "utf-8";
+#caculator-wrap{
+    position:relative;
+    width:100%; max-width:280px;
+    padding:20px;
+    background:#243035;
+    border:var(--border-light); border-radius:10px;
+}
+
+#caculator-result{
+    display:block;
+    width:100%;
+    padding:5px 10px 1em 10px; margin-bottom:20px;
+    background:#bac5b8;
+    border-radius:4px;
+    font-size:2rem; text-align:right;
+    box-shadow:inset 0 5px 10px rgb(79, 100, 90);
+    word-break: break-all;
+}
+
+#caculator-btns{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:5px;
+    position:relative;
+    width:100%;
+}
+
+.btn{padding:.7em 0;font-size:20px;font-weight:bold; transition:none;}
+.btn:hover{filter:brightness(80%);}
+
+/*  */
+[data-value="reset"]{
+    background:rgb(199, 0, 0);
+    grid-row-start:1;
+    grid-column-start:4;
+    color:#fff;
+}
+[data-value="plus"]{
+    grid-row-start:2;
+    grid-column-start:4;
+}
+[data-value="minus"]{
+    grid-row-start:3;
+    grid-column-start:4;
+}
+[data-value="multiply"]{
+    grid-row-start:4;
+    grid-column-start:4;
+}
+[data-value="divide"]{
+    grid-row-start:5;
+    grid-column-start:4;
+}
+[data-value="dot"]{
+    grid-row-start:4;
+    grid-column-start:1;
+}
+[data-value="0"]{
+    grid-row-start:4;
+    grid-column:2 / 4;
+}
+
+[data-value="equal"]{
+    grid-row-start:5;
+    grid-column:1/4;
+}
