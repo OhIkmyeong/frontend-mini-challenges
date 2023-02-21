@@ -1,0 +1,80 @@
+@charset "utf-8";
+#wrap-clock{
+    --wid:300px;
+    --wid-in : calc(var(--wid) * 0.9);
+    position:relative;
+    width:var(--wid);
+    aspect-ratio:1/1;
+    border:12px solid var(--black);
+    border-radius:50%;
+    background:var(--white);
+    box-shadow:0 5px 1rem var(--black);
+}
+
+#wrap-clock::after{
+    content:'';display:block;position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:15px; aspect-ratio:1/1;
+    background:rgb(177, 20, 20);
+    border-radius:50%;
+}
+
+/* nums */
+#clock-nums{
+    position:absolute;
+    width:var(--wid-in); aspect-ratio:1/1;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    font-weight:bold; color:rgb(18, 66, 27);
+    user-select:none;
+}
+#clock-nums div{
+    position:absolute;
+    top:0;left:calc(var(--wid-in) / 2);
+    transform-origin:0 calc(var(--wid-in) / 2);
+    transform:rotate(calc(var(--num) * 30deg));    
+}
+#clock-nums div span{
+    position:relative; display:block;
+    transform-origin:center center;
+    transform:translateX(-.5em) rotate(calc(var(--num) * -30deg));
+}
+
+/* hands */
+.clock-hands{
+    display:block;
+    position:absolute;
+    top:0;left:0;
+    background:var(--black);
+}
+#clock-hands-hour{
+    --hei:calc(var(--wid) * 0.3);
+    width:8px; height:var(--hei);
+    top:calc(var(--hei) / 2 + 4px); left:calc(50% - 4px);
+    transform-origin:center var(--hei);
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0% 100%);
+}
+#clock-hands-min{
+    --hei:calc(var(--wid) * 0.43);
+    width:6px; height:var(--hei);
+    top:calc(var(--hei) / 10); left:calc(50% - 3px);
+    transform-origin:center var(--hei);
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0% 100%);
+}
+#clock-hands-sec{
+    --hei:calc(var(--wid) * 0.6);
+    --bg:#afafba;
+    width:2px; height:var(--hei);
+    top:calc(var(--hei) / 14);
+    left:calc(50% - 1px);
+    transform-origin:center calc(var(--hei) * 0.7);
+    background:var(--bg);
+}
+#clock-hands-sec::after{
+    content:'';display:block;position:absolute;
+    width:6px; height:calc(var(--hei) / 5);
+    background:var(--bg);
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+}
