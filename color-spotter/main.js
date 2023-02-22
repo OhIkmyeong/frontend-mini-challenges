@@ -193,7 +193,10 @@ class ColorSpotter{
             this.toggle_able_size();
         }
 
-        if(!(e.target.classList.contains('cell'))) return;
+        if(!(e.target.classList.contains('cell'))) {
+            this.add_evt_click_board();
+            return;
+        }
 
         if(e.target.classList.contains('cell-odd')){
             /* 옳게 클릭했을시 */
@@ -201,7 +204,7 @@ class ColorSpotter{
             this.#size++;
 
             /* [승리]일정 점수 초과 */
-            if(this.#score >= 200){
+            if(this.#score >= 100){
                 this.win();
                 return;
             }
