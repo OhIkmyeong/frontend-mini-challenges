@@ -12,7 +12,23 @@
 </head>
 <body>
 <main>
+    <section id="match-pair">
+        <template>
+            <div class="card flipped">
+                <div class="card-face card-face-front"></div>
+                <div class="card-face card-face-back">C</div>
+            </div>
+        </template>
+    </section>
+
+    <section id="match-pair-attempt"></section>
+
+    <form oninput="mpRangeOutput.value = mpRange.value">
+        <input id="mpRange" type="range" value="4" min="2" max="10" step="2" title=""/>
+        <output id="mpRangeOutput" for="mpRange">4</output>
+    </form>
     
+    <button id="match-pair-restart" title="restart the game">RESTART</button>
 </main>
 </body>
 </html>

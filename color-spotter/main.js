@@ -186,7 +186,7 @@ class ColorSpotter{
     }//add_evt_click_board
 
     /** on click board */
-    on_click_board = e =>{
+    on_click_board = async(e) =>{
         /* GAME START로 변경 */
         if(!this.STARTED){
             this.STARTED = true;
@@ -212,12 +212,12 @@ class ColorSpotter{
             /* 틀렸을시 */
             this.#life -= 1;
             this.update_life();
-            this.wrong_answer();
+            await this.wrong_answer();
 
+            /* [패배]목숨이 다하면 */
             if(this.#life <= 0){
-                /* [패배]목숨이 다하면 */
                 this.gameover();
-                return
+                return;
             }
         }
         
@@ -267,30 +267,28 @@ class ColorSpotter{
      * GAME OVER
      */
     gameover(){
-        this.wrong_answer();
-
-        this.$board.addEventListener('animationend',()=>{
-            setTimeout(()=>{
-                this.make_popup("😭YOU LOST...");
-            },1000);
-        },{once:true});
+        setTimeout(()=>{
+            this.make_popup("😭YOU LOST...");
+        },1000);
     }//gameover
 
     /**
      * Wrong Answer
      */
     wrong_answer(){
-        this.$board.classList.add('wrong');
-        const $answer = this.$board.querySelector('.cell-odd');
-        $answer.style.zIndex = '10';
-        $answer.style.border = '5px solid #fff';
-        $answer.style.boxShadow = '0 0 2rem rgba(0,0,0,.5)';
-
-        this.$board.addEventListener('animationend',()=>{
-            this.$board.classList.remove('wrong');
-        },{once:true});
+        return new Promise((res)=>{
+            this.$board.classList.add('wrong');
+            const $answer = this.$board.querySelector('.cell-odd');
+            $answer.style.zIndex = '10';
+            $answer.style.border = '5px solid #fff';
+            $answer.style.boxShadow = '0 0 2rem rgba(0,0,0,.5)';
+    
+            this.$board.addEventListener('animationend',()=>{
+                this.$board.classList.remove('wrong');
+                res();
+            },{once:true});
+        });
     }//wrong_answer
 }//ColorSpotter
-
 
 const GAME = new ColorSpotter();
