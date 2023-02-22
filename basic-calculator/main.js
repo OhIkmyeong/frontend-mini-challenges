@@ -1,11 +1,13 @@
 class BasicCaculator{
-    #curr = '';
-    #prev = '';
-    #result = '';
+    #data = {
+        prev : '',
+        curr : '',
+    }
+    #currFunc = undefined;
+    #pressedResult = false;
     
     constructor(){
         this.$output = document.getElementById('caculator-result');
-        this.currFunc = null;
         this.init();
     }//constructor
 
@@ -18,26 +20,27 @@ class BasicCaculator{
      * 초기화
      */
     reset(){
-        this.currFunc = null;
-        this.#curr = "";
-        this.#prev = "";
-        this.#result = 0;
-        this.display_output_result();
+        this.#data.curr = "";
+        this.#data.prev = "";
+        this.#currFunc = undefined;
+        this.#pressedResult = false;
+        this.$output.textContent = "0";
     }//reset
 
     /**
      * 결과 표시
      */
-    display_output_result(){
-        this.$output.textContent = this.#result;
-    }//display_output_result
+    display_output(){
+        this.$output.textContent = this.#currFunc ? this.#data.curr : this.#data.prev;
+    }//display_output
 
     /**
-     * 현재 입력 표시
+     * 결과 표시(2)
+     *  = 버튼을 눌렀을때는 무조건 this.#data.curr만 나옵니다.
      */
-    display_output_curr(){
-        this.$output.textContent = this.#curr;
-    }//display_output_curr
+    display_output_prev(){
+        this.$output.textContent = this.#data.prev;
+    }//display_output_prev
 
     /**
      * 버튼 클릭시
@@ -60,9 +63,11 @@ class BasicCaculator{
      * @returns 
      */
     on_click_num(val){
-        if(this.#curr.includes('.') && val == "dot") return;
-        this.#curr += val == "dot" ? "." : val;
-        this.display_output_curr();
+        const prev_or_curr = this.#currFunc ? "curr" : "prev";
+        console.log(prev_or_curr);
+        if(this.#data[prev_or_curr].includes('.') && val == "dot") return;
+        this.#data[prev_or_curr] += val == "dot" ? "." : val;
+        this.display_output();
     }//on_click_num
 
     /**
@@ -71,7 +76,21 @@ class BasicCaculator{
      * @returns 
      */
     on_click_func(val){
-        
+        if(!this.#data.prev){
+            if(val == "minus") this.#data.prev += "-";
+            return;
+        }
+        if(this.#pressedResult){
+            this.#pressedResult = false;
+            this.#data.curr = '';
+        }
+        if(this.#currFunc && this.#data.curr){
+            this.caculate();
+            this.#currFunc = undefined;
+            this.display_output();
+            this.#data.curr = '';
+        }
+        this.#currFunc = val;
     }//on_click_func
 
     /**
@@ -82,7 +101,10 @@ class BasicCaculator{
     on_click_res(val){
         switch(val){
             case "equal" : {
-                
+                if(!this.#data.prev || !this.#data.curr || !this.#currFunc) return;
+                this.#pressedResult = true;
+                this.caculate();
+                this.display_output_prev();
             }break;
             case "reset" : {
                 this.reset();
@@ -95,24 +117,22 @@ class BasicCaculator{
      * 계산
      */
     caculate(){
-        const curr = Number(this.#curr);
-        const prev = Number(this.#prev);
-        switch(this.currFunc){
+        const curr = Number(this.#data.curr);
+        const prev = Number(this.#data.prev);
+        switch(this.#currFunc){
             case "plus" : {
-                this.#result = String(prev + curr);
+                this.#data.prev = String(prev + curr);
             }break;
             case "minus" : {
-                this.#result = String(prev - curr);
+                this.#data.prev = String(prev - curr);
             }break;
             case "multiply" : {
-                this.#result = String(prev * curr);
+                this.#data.prev = String(prev * curr);
             }break;
             case "divide" : {
-                this.#result = String(prev / curr);
+                this.#data.prev = String(prev / curr);
             }break;
         }//switch
-
-        this.display_output_result();
     }//caculate
 }//BasicCaculator
 
