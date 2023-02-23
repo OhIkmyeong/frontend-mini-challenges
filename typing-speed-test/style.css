@@ -1,0 +1,100 @@
+@charset "utf-8";
+#header{
+    margin-bottom:4rem;
+    line-height:1.5;
+    text-align:center; font-size:15px;
+}
+
+/*  */
+#tst-display{
+    position:relative; overflow:hidden;
+    width:90%; min-height:60px;
+    padding:10px; margin-bottom:2rem;
+    background:linear-gradient(to right, var(--white) 50%, var(--bg));
+    border:var(--border-light); border-right:none;
+    font-size:32px; color:#ccc;
+    box-shadow:-4px 2px 1rem rgba(0,0,0,.1);
+    white-space:nowrap;
+    word-break: break-all;
+}
+#tst-display::first-letter{color:var(--black);font-weight:bold;}
+
+/* keyboard */
+#tst-keyboard{
+    position:relative;
+    width:100%;
+    margin-bottom:2rem;
+    font-size:22px;
+}
+.tst-keyboard-row{
+    display:flex;flex-flow:row wrap;
+    justify-content:center;
+    gap:10px;
+    position:relative;
+    width:100%;
+    margin:10px 0;
+}
+
+#tst-keyboard button{
+    --hue1:50deg;
+    --clr1:hsl(0deg,20%,90%);
+    --clr2:hsl(0deg,100%,100%);
+    padding:.6em 1em;
+    transition:none;
+}
+#tst-keyboard button:hover{filter:brightness(90%) saturate(200%);}
+
+#tst-keyboard button.right{
+    transition:background .2s;
+    background:teal;color:#fff;
+}
+#tst-keyboard button.wrong{
+    transition:background .2s;
+    background:tomato;
+}
+
+/*  */
+#tst-time{
+    position:relative;
+    padding:10px 20px;
+    background:#aaa;
+    border-radius:50px;
+    font-size:1.5rem; font-weight:bold; color:rgb(58, 244, 203);
+}
+    /* started */
+    #tst-time.started{
+        background:var(--black);
+    }
+    /* off */
+    #tst-time.off{display:none;}
+
+#tst-time::after{
+    content:'seconds';
+    margin-left:.25em; 
+    font-weight:500; color:var(--bg);
+}
+
+/*  */
+#tst-result{
+    display:none;
+    width:100%;
+    padding:1em; 
+    background:var(--black);
+    text-align:center;font-size:2rem; color:var(--white);
+}
+#tst-result strong{color:rgb(58, 244, 203);}
+#tst-result.on{
+    display:block;
+}
+
+/*  */
+#tst-reset{
+    --hue1:10deg;
+    --hue2:0deg;
+    --clr1:hsl(var(--hue1), 50%, 90%);
+    --clr2:hsl(var(--hue2), 80%, 80%);
+    margin-top:1rem;
+    padding:.8em 4.5em;
+    text-transform: uppercase;
+    font-weight:bold; color:rgb(123, 42, 42);
+}

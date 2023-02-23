@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typing-speed-test</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <div id="header">
+        <h1>Start typing to measure your speed.</h1>
+        <p>You can click on virtual keyboard as well to type. It contains only small letters and numbers</p>
+    </div>
+
+    <div id="tst-display">${Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque inventore adipisci exercitationem quae, animi ut?}</div>
+
+    <section id="tst-keyboard">
+    </section>
+
+    <div id="tst-time">${time}</div>
+    <div id="tst-result">You have typed <strong>${0}</strong> letters in ${0}seconds</div>
+    <button id="tst-reset" title="reset typing test">Reset</button>
+</main>
+</body>
+</html>
