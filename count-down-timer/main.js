@@ -16,6 +16,10 @@ class CountDownTimer{
         this.reset();
         this.$form.addEventListener('submit',this.on_submit);
         this.$btns.addEventListener('click',this.on_click_btns);
+        //인풋 값 입력되면 다음거에 포커스 이동되도록 이벤트 추가해야해
+        //밸류값 0보다 크게, 6~9보다 작게 조정
+        //html 자체에 정규식으로 조정해버리고 pattern
+        this.$form.addEventListener('input',this.on_input);
     }//init
 
     /* --- dom --- */
@@ -37,12 +41,17 @@ class CountDownTimer{
         this.#sec = this.get_time();
         if(!this.#sec) return;
         this.#STARTED = true;
+        this.put_time();
         this.toggle_ipt_readonly();
         this.toggle_stop_start_btn();
         setTimeout(()=>{
             this.start_timer();
         },1000);
     }//on_submit
+
+    on_input = e =>{
+        console.log(e.target.value);
+    }//on_input
 
     on_click_btns = e =>{
         if(e.target.tagName != "BUTTON") return;
@@ -76,10 +85,16 @@ class CountDownTimer{
     /* --- function --- */
     get_time(){
         const nums = Array
-        .prototype.map.call(this.$$input, $input => $input.value);
+        .prototype.map.call(this.$$input, ($input,idx) => {
+            const val = $input.value; 
+            const nVal = Number(val);
+            if(idx == 0) return nVal >= 6 ? "5" : (nVal < 0 ? "0" : val);
+            return nVal < 0 ? "0" : (nVal > 9 ? "9" : val); 
+        });
         const mm = Number(nums[0] + nums[1]) * 60;
         const ss = Number(nums[2] + nums[3]);
-        return mm + ss;
+        const time = mm + ss;
+        return time > 3600 ? 3600 : time;
     }//get_time
 
     put_time(){
