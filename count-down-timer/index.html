@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count-down-timer</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <form id="form-cdt">
+        <fieldset>
+            <legend>time input</legend>
+            <input type="number" id="cdt-mm-1" min="0" max="5" value="0"/>
+            <input type="number" id="cdt-mm-2" min="0" max="9" value="1"/>
+            :
+            <input type="number" id="cdt-ss-1" min="0" max="9" value="0"/>
+            <input type="number" id="cdt-ss-2" min="0" max="9" value="3"/>
+        </fieldset>
+        <div id="cdt-btns">
+            <button type="submit" id="cdt-start" title="start">Start</button>
+            <button type="button" id="cdt-stop" title="stop">Stop</button>
+            <button type="button" id="cdt-reset" title="reset">Reset</button>
+        </div>
+    </form>
+    <p>Please enter a valid time in <strong>MM:SS</strong></p>
+</main>
+</body>
+</html>

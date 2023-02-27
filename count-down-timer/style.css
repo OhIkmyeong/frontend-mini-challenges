@@ -1,0 +1,44 @@
+@charset "utf-8";
+#form-cdt{
+    display:flex; flex-flow:row wrap;
+    justify-content:center; align-items:center;
+    margin-bottom:2rem;
+}
+
+#form-cdt fieldset{
+    display:flex;
+    justify-content:center; align-items:center;
+    gap:5px;
+    width:100%;
+    margin-bottom:1rem;
+    border:none;
+}
+#form-cdt fieldset legend{display:none;}
+
+input[id ^="cdt-"]{
+    display:block;
+    width:2em;
+    padding:10px 0 10px 10px;
+    text-align:center; font-size:2.5rem;
+}
+
+input[id ^="cdt-"]:read-only{
+    background:transparent;
+    width:1em;
+    padding:10px 0;
+    border:none;
+}
+input[id ^="cdt-"]:read-only:nth-of-type(3){
+    margin-left:10px;
+}
+
+#cdt-btns{
+    text-align:center;
+}
+
+#cdt-stop{
+    --hue1:0deg;
+    --hue2:30deg;
+    --clr1:hsl(0deg,50%,90%);
+    --clr2:hsl(0deg,50%,60%);
+}
