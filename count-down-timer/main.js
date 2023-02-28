@@ -20,6 +20,7 @@ class CountDownTimer{
         //밸류값 0보다 크게, 6~9보다 작게 조정
         //html 자체에 정규식으로 조정해버리고 pattern
         this.$form.addEventListener('input',this.on_input);
+        this.$form.addEventListener('input',this.on_change);
     }//init
 
     /* --- dom --- */
@@ -50,8 +51,27 @@ class CountDownTimer{
     }//on_submit
 
     on_input = e =>{
-        console.log(e.target.value);
+        const val = e.target.value;
+        if(val.length > 1) e.target.value = val.charAt(val.length - 1);
+        if(e.target.id == "cdt-mm-1" && e.target.value > 5) e.target.value = 5;
+        if(e.target.id == "cdt-ss-1" && e.target.value > 5) e.target.value = 5;
+        if(val < 0) e.target.value = 0;
     }//on_input
+
+    on_change = e =>{
+        const $ipt = e.target;
+        if(!$ipt.value)$ipt.value = 0;
+        $ipt.addEventListener('keyup', this.on_keyup, {once:true});
+    }//on_change
+
+    on_keyup = e => {
+        if(e.key == "Backspace") return;
+        const {code} = e;
+        const isNum = code.match('[0-9]')?.[0];
+        if(!isNum) return;
+        const $nextIpt = e.target.nextElementSibling;
+        $nextIpt && $nextIpt.focus();
+    }//on_keyup
 
     on_click_btns = e =>{
         if(e.target.tagName != "BUTTON") return;

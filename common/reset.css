@@ -83,6 +83,7 @@ button::after,
 body{
     width:100%; min-height:100vh;
     background:var(--bg);
+    line-height:1.5;
     font-family: 'Outfit', sans-serif;
     font-size:18px; color:var(--black);
 }
@@ -98,7 +99,7 @@ select{
     font-family:inherit;font-size:inherit;color:inherit;
 }
 
-input::placeholder{color:#aaa; font-weight:normal;}
+input::placeholder{color:#ccc; font-weight:normal;}
 
 /* 📌[header] */
 #hdr{
@@ -138,4 +139,15 @@ main{
     position:relative;
     width:100%; min-height:calc(100vh - 70px);
     padding:1rem;
+}
+
+
+/* 📌 key */
+kbd{
+    background:var(--black); 
+    padding:3px 6px;
+    border-radius:4px;
+    text-transform:capitalize;
+    font-family:inherit;
+    font-size:0.875em; color:var(--white);
 }

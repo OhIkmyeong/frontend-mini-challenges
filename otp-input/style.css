@@ -1,0 +1,21 @@
+@charset "utf-8";
+#form-otp{
+    display:flex;flex-flow:row nowrap;
+    justify-content:center; align-items:center;
+    gap:10px;
+    position:relative;
+    margin-top:1em;
+    font-size:3rem;
+}
+#form-otp input{
+    width:1.3em;
+    border:none; border-radius:4px 4px 0 0;
+    border-bottom:3px solid var(--black);
+    text-align:center;
+}
+
+#form-otp input:placeholder-shown{
+    background:transparent;
+    border-bottom-color:#ccc;
+}
+#form-otp input:focus::placeholder{color:transparent;}

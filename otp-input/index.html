@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp-input</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <p style="text-align:center;">OTP field allowing only <strong>digits</strong>. It supports <kbd>backspace</kbd>, <kbd>delete</kbd>, <kbd>tab</kbd>, <kbd>shift + tab</kbd>, <kbd>left</kbd> and <kbd>right</kbd> arrows along with <kbd>paste</kbd> functionality.</p>
+
+    <form id="form-otp">
+        <template>
+            <input type="text" class="otp-ipt" inputmode="numeric" maxlength="1" placeholder="0"/>
+        </template>
+    </form>
+</main>
+</body>
+</html>
