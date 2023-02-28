@@ -278,6 +278,12 @@ const $slider3 = document.getElementById('mySlider3');
 const $slider4 = document.getElementById('mySlider4');
 
 new CarouselBuilder()
+.set_slider($slider4)
+.is_auto(true)
+.is_endless(true)
+.init();
+
+new CarouselBuilder()
 .set_slider($slider)
 .is_auto(true)
 .init();
@@ -290,10 +296,5 @@ new CarouselBuilder()
 new CarouselBuilder()
 .set_slider($slider3)
 .has_pagination(false)
-.init();
-
-new CarouselBuilder()
-.set_slider($slider4)
-.is_auto(true)
 .is_endless(true)
 .init();
