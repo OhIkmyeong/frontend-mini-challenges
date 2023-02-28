@@ -1,1 +1,36 @@
 @charset "utf-8";
+#area-hold{
+    --green : rgb(65, 225, 137);
+    --blue : rgb(121, 159, 248);
+    display:grid;
+    position:relative;
+    margin-top:2rem;
+    background:var(--black);
+    border:1px solid var(--black);
+    cursor:grab;
+    user-select:none;
+}
+
+#area-hold.grabbing{
+    cursor:grabbing;
+    user-select:none;
+}
+
+.area-hold-cell{
+    position:relative;
+    background:var(--bg);
+    border:1px solid var(--black);
+}
+.area-hold-cell.grabbing{
+    background:var(--green);
+    border-color:rgba(255, 96, 96, 0.5);
+    animation:change_bg .1s linear;
+}
+.grabbing .area-hold-cell.grabbing{
+    background:var(--blue);
+    border-color:rgba(0,0,0,.25);
+    animation:none;
+}
+@keyframes change_bg {
+    from{background:var(--blue);}
+}
