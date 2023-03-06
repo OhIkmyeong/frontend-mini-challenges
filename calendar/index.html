@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <section id="wrap-calendar">
+        <article id="head-calendar">
+            <button id="prev-mm-calendar" title=
+            "prev month">&lt;</button>
+            <select id="sel-mm-calendar" title="select month"></select>
+            <select id="sel-yy-calendar" title="select year"></select>
+            <button id="next-mm-calendar" title="next month">&gt;</button>
+        </article>
+
+        <table id="calendar">
+            <colgroup>
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>SUN</th>
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                    <th>FRI</th>
+                    <th>SAT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="date-calendar today">1</div></td>
+                    <td><div class="date-calendar today">31</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar today">1</div></td>
+                </tr>
+                <tr>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">31</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                    <td><div class="date-calendar">1</div></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="today-calendar" title="today">Today</button>
+    </section><!-- wrap-calendar -->
+
+</main>
+</body>
+</html>

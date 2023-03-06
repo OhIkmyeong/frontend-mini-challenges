@@ -1,0 +1,45 @@
+@charset "utf-8";
+#wrap-calendar{
+    position:relative;
+    padding:20px;
+    background:var(--white);
+    border:var(--border-light);
+}
+
+/* head */
+#head-calendar{
+    display:flex;flex-flow:row wrap;
+    justify-content:center; align-items:center;
+    gap:10px;
+    position:relative;
+    margin-bottom:20px;
+}
+
+/* calendar */
+#calendar{
+    position:relative;
+    width:100%;
+    text-align:center;
+    user-select:none;
+}
+.date-calendar{
+    display:flex;flex-flow:row wrap;
+    justify-content:center;align-items:center;
+    position:relative;
+    width:100%; aspect-ratio:1/1;
+    border-radius:50%;
+}
+/* sun, sat */
+#calendar tr td:first-child .date-calendar{color:red;}
+#calendar tr td:nth-child(7) .date-calendar{color:blue;}
+
+/* today */
+.date-calendar.today{
+    background:rgb(255, 220, 171);
+}
+
+/* today-btn */
+#today-calendar{
+    width:100%;
+    margin-top:2rem;
+}
