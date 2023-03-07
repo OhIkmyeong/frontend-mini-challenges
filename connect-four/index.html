@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>connect-four</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <div class="cnf-info">
+        <p>The four in a row rules are very simple.</p>
+        <p>It’s always played with 2 players and in a 7x6 grid. Each turn each player puts a piece of his color inside a column and it will fall until it reaches the lowest available spot.</p>
+        <p>The one who can put 4 pieces of the same color in a row horizontally, vertically or diagonally wins.</p>
+        <p>If no one manages to do it then the match ends in a draw.</p>
+    </div>
+
+    <section id="cnf" data-turn="blue">
+        <article id="cnf-slots"></article><!-- cnf-slots -->
+        <article id="cnf-board"></article><!-- cnf-board -->
+    </section>
+
+    <button id="cnf-reset" disabled>Reset</button>
+    <h3 id="cnf-result">Playing...</h3>
+</main>
+</body>
+</html>

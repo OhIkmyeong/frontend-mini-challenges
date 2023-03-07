@@ -12,7 +12,34 @@
 </head>
 <body>
 <main>
-    
+    <form id="form-pgn">
+        <label>
+            <span>Page Count</span>
+            <input id="pgn-cnt" type="range" min="6" max="100" value="6" step="1"/>
+        </label>
+        <label>
+            <span>Siblings</span>
+            <input id="pgn-sib" type="range" min="1" max="5" value="1" step="1"/>
+        </label>
+        <label>
+            <span>Boundary</span>
+            <input id="pgn-bnd" type="range" min="1" max="10" value="1" step="1"/>
+        </label>
+    </form>
+
+    <section id="pgn">
+        <button id="pgn-prev" title="prev">&lt;</button>
+        <article id="pgn-pager">
+            <button data-num="1" class="pgn-number">1</button>
+            <button class="pgn-dot pgn-dot-left">...</button>
+            <button data-num="1" class="pgn-number">10</button>
+            <button data-num="2" class="pgn-number on">11</button>
+            <button data-num="1" class="pgn-number">12</button>
+            <button class="pgn-dot pgn-dot-right">...</button>
+            <button data-num="100" class="pgn-number">100</button>
+        </article>
+        <button id="pgn-next" title="prev">&gt;</button>
+    </section><!-- pgn -->
 </main>
 </body>
 </html>

@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* info */
+.cnf-info{
+    padding:1em 1.5em;
+    margin-bottom:2rem;
+    background:var(--white);
+    border:var(--border-light);
+}
+
+/* 🥩 [cnf] */
+#cnf{
+    --blue:rgb(0, 119, 255);
+    --red:rgb(240, 24, 0);
+    --bdr-wid:min(10px, 3vmin);
+    position:relative;
+    margin-bottom:2rem;
+    width:100%; max-width:640px;
+}
+/* [slots] */
+#cnf-slots{
+    display:flex;flex-flow:row nowrap;
+    justify-content:center;align-items:center;
+    position:relative;
+    width:100%;
+    padding:10px;
+}
+
+.cnf-slots-slot{
+    aspect-ratio:1/1;
+    border-radius:50%;
+    border:var(--bdr-wid) solid var(--bg);
+    box-shadow:
+        inset -3px -3px 5px rgba(255,255,255,.5),
+        inset 3px 3px 5px rgba(0,0,0,.1);
+    cursor:pointer;
+}
+/* [board] */
+#cnf-board{
+    display:flex;flex-flow:row wrap;
+    position:relative;
+    width:100%;
+    padding:10px;
+    background:var(--black);
+    border-radius:4px;
+    box-shadow:5px 5px 1rem rgba(0,0,0,.5);
+}
+.cnf-board-cell{
+    position:relative;
+    aspect-ratio:1/1;
+    background:var(--bg);
+    border:var(--bdr-wid) solid var(--black);
+    border-radius:50%;
+    box-shadow:inset 5px 5px 10px rgba(0,0,0,.5);
+}
+/* reset */
+#cnf-reset{margin-bottom:2rem;}
+/* result */
