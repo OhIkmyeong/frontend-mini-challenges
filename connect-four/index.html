@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
     <script src="./../common/common.js" defer></script>
-    <script src="./main.js" type="module"></script>
 </head>
 <body>
 <main>
@@ -19,13 +18,21 @@
         <p>If no one manages to do it then the match ends in a draw.</p>
     </div>
 
+    <h3 id="cnf-result">Playing...</h3>
+
     <section id="cnf" data-turn="blue">
         <article id="cnf-slots"></article><!-- cnf-slots -->
         <article id="cnf-board"></article><!-- cnf-board -->
+        <div id="cnf-moving"></div><!-- cnf-moving -->
     </section>
 
     <button id="cnf-reset" disabled>Reset</button>
-    <h3 id="cnf-result">Playing...</h3>
+
+    <!-- 스크립트 -->
+    <script type="module">
+        import {ConnectFour} from './ConnectFour.js';
+        new ConnectFour().init_game();
+    </script>
 </main>
 </body>
 </html>

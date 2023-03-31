@@ -9,6 +9,7 @@
 
 /* 🥩 [cnf] */
 #cnf{
+    --turn:var(--blue);
     --blue:rgb(0, 119, 255);
     --red:rgb(240, 24, 0);
     --bdr-wid:min(10px, 3vmin);
@@ -16,7 +17,7 @@
     margin-bottom:2rem;
     width:100%; max-width:640px;
 }
-/* [slots] */
+/* 🚩[slots] */
 #cnf-slots{
     display:flex;flex-flow:row nowrap;
     justify-content:center;align-items:center;
@@ -28,18 +29,28 @@
 .cnf-slots-slot{
     aspect-ratio:1/1;
     border-radius:50%;
+    background:var(--bg);
     border:var(--bdr-wid) solid var(--bg);
     box-shadow:
         inset -3px -3px 5px rgba(255,255,255,.5),
         inset 3px 3px 5px rgba(0,0,0,.1);
     cursor:pointer;
 }
-/* [board] */
+
+.cnf-slots-slot.on{
+    background:var(--turn);
+    box-shadow:
+        inset -3px -3px 5px rgba(255,255,255,.5),
+        inset 3px 3px 5px rgba(0,0,0,.5);
+}
+/* 🚩[board] */
 #cnf-board{
     display:flex;flex-flow:row wrap;
+    justify-content:center;
+    gap:20px;
     position:relative;
     width:100%;
-    padding:10px;
+    padding:20px;
     background:var(--black);
     border-radius:4px;
     box-shadow:5px 5px 1rem rgba(0,0,0,.5);
@@ -47,11 +58,45 @@
 .cnf-board-cell{
     position:relative;
     aspect-ratio:1/1;
-    background:var(--bg);
-    border:var(--bdr-wid) solid var(--black);
+    background:rgba(0,0,0,.3);
     border-radius:50%;
     box-shadow:inset 5px 5px 10px rgba(0,0,0,.5);
 }
-/* reset */
+.cnf-board-cell.red{background:var(--red);}
+.cnf-board-cell.blue{background:var(--blue);}
+.cnf-board-cell.on{
+    box-shadow :
+    0 0 20px var(--turn),
+    0 0 10px var(--turn),
+    -5px -5px 5px rgba(255,255,255,.5),
+    5px 5px 15px rgba(0,0,0,1),
+    inset -5px -5px 5px rgba(255,255,255,.5),
+    inset 5px 5px 10px rgba(255,255,255,.5),
+    0 0 50px var(--turn);
+}
+
+/* 🚩[reset] */
 #cnf-reset{margin-bottom:2rem;}
-/* result */
+
+/* 🚩[result] */
+/* 🚩[moving] */
+#cnf-moving{
+    display:block; position:absolute;
+    aspect-ratio:1/1;
+    top:0; left:0;
+    padding:10px;
+    background:transparent;
+    transition:transform .3s .1s ease-in-out;
+}
+#cnf-moving::after{
+    content:''; display:block; 
+    width:100%; aspect-ratio:1/1;
+    background:var(--turn);
+    top:0;left:0;
+    border-radius:50%;
+    box-shadow:
+        inset 2px 2px 5px rgba(255,255,255,.5),
+        inset -5px -5px 10px rgba(0,0,0,.5);
+}
+#cnf-moving.off{display:none;}
+
