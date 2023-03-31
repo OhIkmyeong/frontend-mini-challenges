@@ -13,14 +13,14 @@
 
 /* [paginator] */
 #pgn{
-    display:flex;
+    display:flex; flex-flow:row wrap;
     justify-content:center; align-items:center;
     gap:10px;
     position:relative;
 }
 /*  */
 #pgn-pager{
-    display:flex;
+    display:flex; flex-flow:row wrap;
     gap:5px;
     position:relative;
 }

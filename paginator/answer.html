@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @media (min-width: 768px) {
+            .container {
+                width: 50%;
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .pagination {
+            display: inline-flex;
+            column-gap: 10px;
+        }
+
+        input {
+            width: 200px;
+            padding: 2px 5px;
+            font-size: 1rem;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .page-number,
+        .page-modifier {
+            display: flex;
+            flex: 1 1 0;
+            justify-content: center;
+            width: 0;
+            min-width: 30px;
+            max-width: 30px;
+            padding: 6px 12px;
+            color: black;
+            background-color: #fafafa;
+            border: 1px solid #ececec;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            color: #ccc;
+            background-color: inherit;
+        }
+
+        .page-number.active {
+            color: white;
+            background-color: #0070f3;
+        }
+
+        .dot-left:hover::before {
+            content: '<<';
+        }
+
+        .dot-right:hover::before {
+            content: '>>';
+        }
+
+        .dot::before {
+            font-size: 0.8rem;
+        }
+
+        .dot:hover {
+            font-size: 0;
+        }
+    </style>
+    <script src="./answer.js" defer></script>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="form">
+            <label for="pages">
+                Page count
+                <input id="pages" type="range" value="6" min="6" max="100" />
+            </label>
+            <label for="siblings">
+                Siblings
+                <input id="siblings" type="range" value="1" min="1" max="5" />
+            </label>
+            <label for="boundary">
+                Boundary
+                <input id="boundary" type="range" value="1" min="1" max="10" />
+            </label>
+        </div>
+
+        <nav id="pagination" class="pagination"></nav>
+    </div>
+</body>
+
+</html>
