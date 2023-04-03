@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-methods</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <label id="ipt-lbl">
+        <span>input</span>
+        <input id="ipt" type="text" value="10,20,30,40,50,60,70,80"/>
+    </label>
+
+    <section id="am-wrap">
+        <template>
+            <article class="am">
+                <select class="am-select">
+                    <option value="map">map</option>
+                    <option value="filter" selected>filter</option>
+                </select>
+                <input class="am-method" type="text" value="index > 3"/>
+                <output class="am-result">50,60,70,80</output>
+            </article><!-- am -->
+        </template>
+    </section><!-- am-wrap -->
+
+    <div id="am-btn-wrap">
+        <button class="am-btn" data-btn="add">add</button>
+        <button class="am-btn" data-btn="evaluate">evaluate</button>
+        <button class="am-btn" data-btn="reset">reset</button>
+    </div><!-- am-btn-wrap -->
+</main>
+</body>
+</html>

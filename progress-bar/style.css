@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* 🥩[진행바] */
+#progress-bar-wrap{
+    position:relative; overflow:hidden;
+    width:100%; max-width:1200px;
+    height:12px;
+    background:rgba(0,0,0,.1);
+    border-radius:50px;
+    box-shadow:
+        2px 2px 2px rgba(0,0,0,.12),
+        inset -2px -2px 4px rgba(255,255,255,.5),
+        inset 2px 2px 8px rgba(0,0,0,.2);
+}
+#progress-bar{
+    position:relative;
+    width:0%;
+    height:100%;
+    background: linear-gradient(to bottom,rgb(75, 150, 254),rgb(118, 173, 248),rgb(78, 110, 237));
+    transition:width .1s linear;
+}
+#progress-bar.done{
+    background:linear-gradient(to bottom, rgb(33, 235, 181), rgb(167, 241, 146), rgb(21, 109, 80));
+}
+/* 🥩[숫자] */
+#progress-num{
+    position:relative;
+    margin-top:20px;
+    text-align:center; font-weight:bold;
+}
+#progress-num::after{
+    content: "%"; color:#aaa;
+}
+/* 🥩[버튼영역] */
+#progress-btn-wrap{
+    display:flex;
+    gap:10px;
+    position:relative;
+    margin-top:50px;
+}
+.progress-btn{
+    text-transform:uppercase;
+}
+
+.progress-btn[data-btn="stop"]{
+    --hue1: 10deg;
+    --hue2: 40deg;
+    --clr1: hsl(var(--hue1), 100%, 70%);
+    --clr2: hsl(var(--hue2), 100%, 85%);
+}
+.progress-btn[data-btn="reset"]{
+    --hue1: 250deg;
+    --hue2: 200deg;
+    --clr1: hsl(var(--hue1), 100%, 80%);
+    --clr2: hsl(var(--hue2), 100%, 95%);
+}

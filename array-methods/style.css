@@ -1,0 +1,65 @@
+/* 🥩인풋 영역 */
+#ipt-lbl{
+    display:block;
+    position:relative;
+    width:100%;
+    padding:14px 10px;
+    background:var(--black);
+    border-radius:10px;
+    text-align:center; color:#fff;
+}
+#ipt{
+    width:calc(100% - 4em); margin-left:.5em; 
+    text-align:center; font-size:1.5rem; color:var(--black);
+}
+
+/* 🥩수식 영역 */
+#am-wrap{
+    display:flex;flex-flow:column nowrap;
+    gap:20px;
+    position:relative;
+    width:100%;
+    margin-top:10px; padding:20px;
+    background:var(--black);
+    border-radius:10px;
+}
+
+.am{
+    display:flex;flex-flow:row wrap;
+    justify-content:center;align-items:center;
+    gap:20px 10px;
+    position:relative; overflow:hidden;
+    width:100%;
+    padding:20px 0 0 0;
+    background:#fff;
+    border:var(--border-normal); border-radius:4px;
+}
+
+input.am-method{
+    display:block;
+    font-weight:600; color:rgb(75, 99, 160);
+}
+.am-result{
+    width:100%;
+    padding:20px;
+    background:#ecf8f4;
+    text-align:center; font-weight:bold; font-size:2rem; color:rgb(85, 154, 98);
+    word-break:break-all;
+}
+/* 🥩버튼 영역 */
+#am-btn-wrap{
+    display:flex;
+    gap:10px;
+    position:relative;
+    margin-top:20px;
+}
+.am-btn{
+    text-transform:uppercase;
+    font-weight:700;
+}
+.am-btn[data-btn="evaluate"]{
+    --hue1: 260deg;
+    --hue2: calc(var(--hue1) - 30deg);
+    --clr1: hsl(var(--hue1), 100%, 95%);
+    --clr2: hsl(var(--hue2), 100%, 90%);
+}
