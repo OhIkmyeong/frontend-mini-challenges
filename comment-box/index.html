@@ -12,34 +12,34 @@
 </head>
 <body>
 <main>
-    <section id="content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolorem eaque alias eveniet, illo enim!</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat aut quasi deserunt?</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat aut quasi deserunt?</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat aut quasi deserunt?</p>
-    </section><!-- content -->
+    <!-- <section id="content">
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et dolor ducimus iusto, atque neque temporibus?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore animi dolorum doloremque eveniet, ipsam quo quae quibusdam aliquid aspernatur iure sint iste vel doloribus, necessitatibus ab soluta deserunt quasi laboriosam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloremque debitis facilis suscipit expedita corporis, vel voluptatem iste aliquam delectus?</p>
+    </section> --><!-- content -->
 
     <section id="comment-list">
         <article class="comment">
             <section class="comment-main">
-                <div class="comment-main-img"></div>
                 <div class="comment-main-text">
-                    <p class="comment-main-text-user">User Name</p>
-                    <div class="comment-main-text-content">Hello World!!!!</div>
+                    <input type="text" class="comment-main-text-user" value="User Name" readonly>
+                    <div class="comment-main-text-content" readonly>Hello World!!!!</div>
                 </div>
                 <div class="comment-main-btns">
-                    <button class="comment-main-btns-btn" title="reply">reply</button>
-                    <button class="comment-main-btns-btn" title="edit">edit</button>
-                    <button class="comment-main-btns-btn" title="delete">delete</button>
+                    <button class="comment-main-btns-btn" data-btn="reply" title="reply">reply</button>
+                    <button class="comment-main-btns-btn" data-btn="edit" title="edit">edit</button>
+                    <button class="comment-main-btns-btn" data-btn="delete" title="delete">delete</button>
                 </div>
             </section><!-- comment-main -->
-            <section class="comment-subs"></section><!-- comment-subs -->
+            <section class="comment-subs">
+            </section><!-- comment-subs -->
         </article><!-- comment -->
-
     </section><!-- comment-list -->
 
     <section id="comment-write">
-        <textarea id="comment-write-ipt"></textarea>
+        <input id="comment-write-user" placeholder="User Name"/>
+        <textarea id="comment-write-content" placeholder="Write new comment here..."></textarea>
         <button id="comment-write-submit">COMMENT</button>
     </section><!-- comment-write -->
 </main>

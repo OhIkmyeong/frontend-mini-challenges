@@ -1,1 +1,156 @@
 @charset "utf-8";
+/* 📌--------------------[본문]-------------------- */
+#content{
+    position:relative;
+    width:100%; max-width:1200px;
+    padding:1em 1.5em;
+    background:#fff;
+    border:var(--border-light);
+}
+#content p{margin-bottom:1em; text-indent:10px;}
+/* 📌--------------------[코멘트 리스트]-------------------- */
+/* 📍📍📍[wrap] */
+#comment-list{
+    display:flex;flex-flow:column nowrap;
+    gap:20px;
+    position:relative;
+    width:100%; max-width:1200px;
+    margin:20px auto 0; padding:20px;
+    background:var(--bg-dark);
+    border:1px solid var(--black);
+}
+#comment-list:empty::after{
+    content:'There are no Comments here...';
+    color:#aaa;
+}
+/* 📍📍📍[코멘트] */
+.comment{
+    position:relative;width:100%;
+    transform-origin:left top;
+}
+.comment.on{
+    animation: show-comment .3s linear 0s both;
+}
+.comment.off{
+    transform-origin:center center;
+    animation: show-comment .3s linear .2s 1 reverse both;
+}
+@keyframes show-comment {
+    from{transform:scale(0);}
+    to{transform:scale(1);}
+}
+/* 📍📍[메인 코멘트 영역] */
+.comment-main{
+    position:relative;
+    padding:20px;
+    width:100%;
+    background:#fff;
+    border:1px solid var(--black); border-radius:4px;
+    box-shadow:5px 5px 5px rgba(0,0,0,.1);
+}
+/* 📍[메인 코멘트 - 내용영역] */
+/* 사용자 */
+input.comment-main-text-user{
+    width:100%; max-width:300px;
+    padding:10px; margin-bottom:10px;
+    background:var(--bg);
+    font-weight:bold; font-size:1.4rem;
+    border:var(--border-normal);
+}
+input.comment-main-text-user:read-only{
+    outline:none;
+    padding:0 0 10px 0; margin-bottom:0;
+    background:transparent;
+    border:none;
+}
+
+/* 내용 */
+.comment-main-text-content{
+    resize:none;
+    width:100%;
+    padding:0;
+    border:none; 
+    border-radius:4px;
+    font-family:inherit; font-size:inherit;
+    word-break:break-all;
+}
+.comment-main-text-content[contenteditable]{
+    min-height:100px;
+    padding:10px; margin-bottom:10px;
+    background:var(--bg);
+    border:var(--border-normal);
+}
+.comment-main-text-content[contenteditable]:empty::after{
+    content:'Write some comment here...';
+    color:#ccc;
+}
+/* 📍[메인 코멘트 - 버튼 영역] */
+.comment-main-btns{
+    display:flex; flex-flow:row wrap;
+    justify-content:flex-end;
+    gap:5px;
+    position:relative;
+    margin-top:5px;
+}
+.comment-main-btns-btn{
+    text-transform:uppercase;
+    font-size:13px; font-weight:600;
+}
+.comment-main-btns-btn[data-btn="edit"],
+.comment-main-btns-btn[data-btn="save"]{
+    --hue1:250deg;
+    --hue2:200deg;
+    --clr1:hsl(250deg, 100%, 90%);
+    --clr2:hsl(200deg, 100%, 80%);
+}
+
+.comment-main-btns-btn[data-btn="cancel"]{
+    --hue1:250deg;
+    --hue2:200deg;
+    --clr1:hsl(250deg, 10%, 90%);
+    --clr2:hsl(200deg, 10%, 90%);
+    color:#777;
+}
+
+.comment-main-btns-btn[data-btn="delete"]{
+    --hue1:30deg;
+    --hue2:10deg;
+    --clr1:hsl(30deg, 100%, 80%);
+    --clr2:hsl(10deg, 100%, 80%);
+}
+/* 📍📍[서브코멘트 영역] */
+.comment-subs{
+    padding-left:30px;
+}
+/* 📍 서브코멘트 안의 코멘트 */
+.comment-subs .comment{
+    margin-top:10px;
+}
+.comment-subs .comment-main{
+    background:rgb(243, 249, 246);
+    box-shadow:none;
+}
+/* 📌--------------------[코멘트 작성]-------------------- */
+#comment-write{
+    position:relative;
+    width:100%; max-width:1200px;
+    padding:20px;
+    background:var(--black);
+}
+#comment-write-user{
+    width:100%; max-width:200px;
+}
+#comment-write-content{
+    width:100%; height:150px;
+    margin-top:10px;padding:20px;
+    background:#fff;
+    border:none; border-radius:4px;
+    resize:none;
+    font-size:1.2rem; font-family:inherit;
+}
+#comment-write-content::placeholder{color:#ccc;}
+#comment-write-submit{
+    display:block;
+    width:100%;
+    margin-left:auto; margin-top:10px;
+}

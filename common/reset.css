@@ -6,6 +6,7 @@ li{list-style-type:none;}
 
 :root{
     --bg:#f0f1f5;
+    --bg-dark:#e7e8eb;
     --white:#fff;
     --black:#3b3d4c;
     --blur: 0px;
@@ -21,6 +22,7 @@ li{list-style-type:none;}
     --font: "Noto Sans", sans-serif;
 
     --border-light:1px solid rgb(219, 227, 227);
+    --border-normal:1px solid #acacb0;
 }
 
 /* Aqua Button : https://codepen.io/simeydotme/pen/MWXxKrP */
