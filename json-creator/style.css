@@ -1,0 +1,111 @@
+@charset "utf-8";
+:root{
+    --gap-left:30px;
+}
+/* 📌[WRAP] */
+#jcipt-wrap{
+    display:flex; flex-flow:column nowrap;
+    justify-content:flex-start; align-items:flex-start;
+    gap:10px;
+    position:relative;
+    width:100%;
+    margin-bottom:40px;
+}
+/* 📌[item-wrap] */
+.jcipt{
+    position:relative;
+}
+
+/* 📌[main] */
+.jcipt-main{
+    display:flex;flex-flow:row wrap;
+    align-items:center;
+    gap:5px;
+    position:relative;
+    width:100%;
+    padding:5px; 
+    margin-bottom:10px;
+    background:var(--bg-dark);
+    border:var(--border-light); border-radius:4px;
+}
+/* fold */
+.jcipt-main-fold{
+    display:flex;
+    justify-content:center; align-items:center;
+    width:25px; aspect-ratio:1/1;
+    text-align:center; color:#aaa;
+    transition:transform .2s linear;
+    background:#ffffff66; border-radius:50%;
+    font-size:14px;
+    user-select:none; cursor:pointer;
+}
+.jcipt-main-fold.off{display:none;}
+[open] > .jcipt-main > .jcipt-main-fold{
+    transform:rotate(90deg);
+    color:#666;
+}
+
+/* input */
+input[name="jcipt-ipt"]{
+    display:block;
+    width:150px;
+}
+input[name="jcipt-ipt"].off{display:none;}
+
+/* button */
+.jcipt-btn{
+    font-size:13px; font-weight:bold; 
+    color:#fff;
+}
+.jcipt-btn-add,
+#jcipt-add-key{
+    --hue1: 200deg;
+    --hue2: calc(var(--hue1) + 50deg);
+    --clr1: hsl(var(--hue1), 100%, 30%);
+    --clr2: hsl(var(--hue2), 80%, 75%);
+    color:#fff;
+}
+.jcipt-btn-remove{
+    --hue1: 25deg;
+    --hue2: calc(var(--hue1) - 10deg);
+    --clr1: hsl(var(--hue1), 100%, 50%);
+    --clr2: hsl(var(--hue2), 100%, 15%);
+}
+/* 📌[sub] */
+.jcipt-sub{
+    position:relative;
+    padding-left:var(--gap-left);
+    margin-top:10px;
+}
+
+.jcipt-sub:empty{margin-top:0;}
+
+/* 세로선 */
+.jcipt-sub:not(:empty)::before{
+    content:'';display:block;position:absolute;
+    left:5px; top:-10px;
+    height:45px; width:2px;
+    background:var(--black);
+}
+
+.jcipt-sub > .jcipt:not(:last-child)::before{
+    content:'';display:block;position:absolute;
+    left:-25px; top:35px;
+    height:100%; width:2px;
+    background:var(--black);
+}
+
+/* 가로선 */
+.jcipt-sub .jcipt-main::before{
+    content:'';display:block;position:absolute;
+    top:33px; right:100%;
+    width:25px; height:2px;
+    background:var(--black);
+}
+
+/* 📌[result] */
+#result{
+    position:relative;
+    margin-top:30px;
+    font-size:1.5rem;
+}

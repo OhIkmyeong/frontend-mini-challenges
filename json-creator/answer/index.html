@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js" type="module" defer></script>
+    <script src="../../helpers/header.js" type="module" defer></script>
+<style>
+.container {
+    margin: 1rem;
+}
+
+input {
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    padding: 4px;
+}
+
+.sub-item {
+    position: relative;
+    margin-left: 1.5rem;
+    padding: 20px 0 0 20px;
+}
+
+.sub-item::before {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: black;
+    background: black;
+    content: '';
+}
+
+.sub-item::after {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: black;
+    background: black;
+    content: '';
+}
+
+.sub-item:not(:last-child)::after {
+    height: 100%;
+}
+
+.arrow {
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+}
+
+.arrow.open {
+    transform: rotate(90deg);
+    transition: all 0.15s;
+}
+
+.arrow:not(.open)~.sub-item,
+.arrow.hide {
+    display: none;
+}
+
+#json-holder>.json-container>.remove {
+    display: none;
+}
+
+.get-json-button {
+    margin: 1rem 0;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="json-holder"></div>
+        <button class="get-json-button">Get JSON</button>
+        <div><output></output></div>
+    </div>
+
+    <template class="json-template">
+        <div class="json-container">
+            <span class="arrow hide">▶</span>
+            <input type="text" class="key" placeholder="key" />
+            <input type="text" class="value" placeholder="value" />
+            <button class="add">+</button>
+            <button class="remove">x</button>
+        </div>
+    </template>
+</body>
+
+</html>

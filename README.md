@@ -1,15 +1,17 @@
 # fontend-mini-challenges
 Frontend Mini Challenges (by sadanandpai)
 
-함 풀어봅시다~
-
 -----------------------
 
-## 📌Those Challensges Are from 
+## 📌Those Challensges by sadanandpai 
 * Github : https://github.com/sadanandpai/frontend-mini-challenges
 * Demo : https://sadanandpai.github.io/frontend-mini-challenges/
 
 ----------------------------
+## HISTORY
+* 2023-04-05
+    * 1차 완료. Progress Bar까지
+
 ## 😊 My Answers
 0. [목록 보기](https://ohikmyeong.github.io/frontend-mini-challenges)
 1. [Counter](https://ohikmyeong.github.io/frontend-mini-challenges/counter)
@@ -96,10 +98,10 @@ Frontend Mini Challenges (by sadanandpai)
 1. [Comment box](https://ohikmyeong.github.io/frontend-mini-challenges/comment-box/)
     * [Answer-Demo](https://sadanandpai.github.io/frontend-mini-challenges/src/mc/comment-box/)
     * [Answer-Github](https://github.com/sadanandpai/frontend-mini-challenges/tree/main/src/mc/comment-box/)
-1. [** JSON Creator](https://ohikmyeong.github.io/frontend-mini-challenges/json-creator/)
+1. [📌 JSON Creator 재귀용법](https://ohikmyeong.github.io/frontend-mini-challenges/json-creator/)
     * [Answer-Demo](https://sadanandpai.github.io/frontend-mini-challenges/src/mc/json-creator/)
     * [Answer-Github](https://github.com/sadanandpai/frontend-mini-challenges/tree/main/src/mc/json-creator/)
-1. [** Array methods](https://ohikmyeong.github.io/frontend-mini-challenges/array-methods/)
+1. [📌 Array methods](https://ohikmyeong.github.io/frontend-mini-challenges/array-methods/)
     * [Answer-Demo](https://sadanandpai.github.io/frontend-mini-challenges/src/mc/array-methods/)
     * [Answer-Github](https://github.com/sadanandpai/frontend-mini-challenges/tree/main/src/mc/array-methods/)
 1. [Progress Bar](https://ohikmyeong.github.io/frontend-mini-challenges/progress-bar/)
