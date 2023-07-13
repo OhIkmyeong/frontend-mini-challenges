@@ -1,0 +1,43 @@
+@charset "utf-8";
+:root{
+    --wid-content:700px;
+}
+
+/* form */
+#frm-ipt{
+    display:block;
+    width:100%;
+    max-width:var(--wid-content);
+}
+
+/* result */
+#wrap-result{
+    position:relative;
+    width:100%;max-width:var(--wid-content);
+    margin-top:30px;
+}
+
+.tf-case{
+    position:relative;
+    width:100%;
+    margin-bottom:20px;
+}
+.tf-case-type{
+    position:absolute;z-index:1;
+    left:10px;top:-10px;
+    padding:3px 10px;
+    background:var(--black);
+    font-size:14px;
+    color:var(--white);
+    text-transform: capitalize;
+}
+
+.tf-case-text{
+    position:relative;
+    width:100%;
+    padding:20px;
+    background:var(--white);
+    font-size:1.6rem;
+    word-break: break-all;
+
+}

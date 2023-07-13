@@ -1,0 +1,46 @@
+#multi-type{
+    display:flex;
+    align-items:center;
+    gap:.25em;
+    position:relative;
+    font-size:8vmin; font-weight:bold; color:var(--black);
+}
+
+.multi-type-text-static{
+    display:inline-block;
+    color:rgb(50, 187, 197);
+}
+
+.multi-type-text-typing{
+    display:inline-block;
+    position:relative; overflow:hidden;
+    padding-right:10px;
+}
+.multi-type-text-typing .bar{
+    /* outline:1px solid red; */
+    position:absolute; display:block;
+    width:100%; height:100%; top:0px; left:0;
+    transform:translateX(100%);
+    background:var(--bg);
+}
+.multi-type-text-typing .bar::after{
+    content:'';display:block;position:absolute;
+    top:0;left:0;
+    width:3px; height:100%;
+    background:var(--black);
+    animation: blink 1s steps(2,jump-none) infinite;
+}
+
+@keyframes blink {
+    from {background:var(--black);}
+    to{background:#ccc;}
+}
+
+@keyframes move {
+    from {
+        /* border-color:var(--black); */
+        transform:translateX(100%);}
+    to {
+        /* border-color:transparent; */
+        transform:translateX(0%);}
+}
