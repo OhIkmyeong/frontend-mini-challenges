@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type-ahead</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <section>
+        <h1>초간단하게 datalist 사용해서 하기</h1>
+        <input id="ipt-datalist" list="dtl" type="text" placeholder="datalist 최고오..." style="width:100%; max-width:600px;"/>
+        <datalist id="dtl"></datalist>
+    </section>
+
+    <section style="position:relative; margin-top:2rem; width:100%; max-width:400px; display:flex; flex-flow:column wrap; gap:10px; align-items:center;">
+        <h1>한땀..</h1>
+        <input id="ipt-cs" type="text" placeholder="입력해보셈" style="display:block; width:100%;"/>
+        <ul id="result"></ul>
+    </section>
+</main>
+</body>
+</html>

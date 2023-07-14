@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+#wrap-star{
+    display:flex;
+    /* gap:10px; */
+    position:relative;
+    pointer-events:none;
+}
+
+/*  */
+.star{
+    /* outline:1px solid red; */
+    position:relative; overflow:hidden;
+}
+.star::before{
+    content:'☆';
+    position:absolute;
+    top:50%;left:50%;transform:translate(-50%,-49%);
+    font-size:70px;
+}
+
+.star-fill{
+    display:block;
+    position:relative; overflow:hidden;
+    color:#ffcd01;
+    font-size:76px;
+    width:0%;
+}
+
+#ipt-star{
+    display:block;
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%, -50%);
+    opacity:0.1;
+    cursor:pointer;
+}

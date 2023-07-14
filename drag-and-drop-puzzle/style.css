@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+#wrap-puzzle{
+    display:grid;
+    gap:10px;
+    position:relative;
+    width:100%; max-width:700px;
+    padding:20px;
+    background:var(--black);
+}
+
+.puzzle-piece{
+    display:flex;
+    justify-content:center; align-items:center;
+    position:relative;
+    aspect-ratio:1/1;
+    background:#fff;
+    border-radius:5px;
+    font-size:3vmin;
+    user-select:none; cursor:pointer;
+}
+
+.puzzle-piece.answer{
+    pointer-events:none;
+    /* box-shadow:
+        inset 0px 0px 15px 0 rgba(255,255,255,.3),0 0 10px 5px var(--bg); */
+}
