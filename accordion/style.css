@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+#accordian{
+    display:flex;flex-flow:column nowrap;
+    gap:20px;
+    position:relative;
+    width:100%;
+}
+
+.accordian-item{
+    position:relative;
+    width:100%;
+}
+
+/*  */
+.accordian-item summary,
+.accordian-item .question{
+    list-style-type:none;
+    position: relative;
+    padding:20px;
+    background:var(--white);
+    border:1px solid var(--black);
+    border-radius:8px;
+    font-size:16px; font-weight:bold;
+    cursor:pointer;
+}
+
+.accordian-item summary::after,
+.accordian-item .question::after{
+    content:"";  display:block; position:absolute;
+    width:0;height:0;
+    right:20px; top:calc(50% - 5px);
+    border:10px solid black;
+    border-color:black transparent transparent transparent;    
+    transition:all .3s linear;
+}
+
+.accordian-item[open] summary::after,
+.accordian-item.on .question::after{
+    transform:translateY(-50%) rotate(180deg);
+    border-top-color:red;
+}
+
+/*  */
+.accordian-item > article,
+.accordian-item .answer{
+    position: relative; overflow:hidden;
+    padding:20px;
+}
+.accordian-item .answer{
+    max-height:0; padding:0 20px;
+    transition:all .5s;
+}
+.accordian-item.on .answer{
+    max-height:1000px; padding:20px;
+}
