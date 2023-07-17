@@ -4,7 +4,7 @@
     justify-content:space-between;
     position:relative; overflow:hidden;
     width:100%; max-width:1400px;
-    border:var(--border-light); border-radius;10px;
+    border:var(--border-light); border-radius:10px;
 }
 
 /* [LIST] */

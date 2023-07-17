@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lift-simulation</title>
+    <link rel="stylesheet" type="text/css" href="./../common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./../common/common.js" defer></script>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+<main>
+    <h3>Max number of floors should be 99 and lift 4</h3>
+    <form id="frm">
+        <label>
+            <span>층 개수</span>
+            <input type="number" value="5" min="2" max="99" id="floorValue"/>
+        </label>
+        <label>
+            <span>엘리베이터 개수</span>
+            <input type="number" value="3" min="1" max="4" id="liftValue"/>
+        </label>
+        <button type="submit">Submit</button>
+        <button type="reset" class="off">Reset</button>
+    </form>
+    <section id="wrap"></section>
+</main>
+</body>
+</html>
