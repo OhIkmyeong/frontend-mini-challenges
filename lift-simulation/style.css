@@ -81,6 +81,7 @@ button[type="reset"].off{
     height:135px; aspect-ratio:1.5/2;
     background:rgb(189, 129, 69);
     border:5px solid black; border-radius:4px;
+    transform:translateY(0);
 }
 
 .lift-door{

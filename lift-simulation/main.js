@@ -45,25 +45,22 @@ class LiftSimulator{
         }//for
     }//toggle_form
 
-    on_click_btn = async (e, $floor, floorNum) =>{
-        const $btn = e.currentTarget;
+    on_click_btn = async ($floor, floorNum) =>{
         let $lift = this.find_lift(floorNum);
         
         if(!$lift) {
             this.watingList.push({$floor,floorNum});
-            $btn.disabled = false;
             return;
         }
         await this.lift_simulate($lift,$floor,floorNum);
-        $btn.disabled = false;
 
         while(this.watingList.length){
             const {$floor:$floorCurr, floorNum:floorNumCurr} = this.watingList.shift();;
             const $liftCurr = this.find_lift(floorNumCurr);
-            if(!$liftCurr){
-                console.log('아직 없음');
-            }else{
+            if($liftCurr){
                 await this.lift_simulate($liftCurr,$floorCurr,floorNumCurr);
+            }else{
+                console.log('아직 없음');
             }
         }//while
     }//on_click_btn
@@ -80,6 +77,9 @@ class LiftSimulator{
     }//lift_simulate
 
     find_lift(floorNum){
+        // const $existLift = this.$$lift.find($cand => $cand.dataset.curr == floorNum);
+        // if($existLift) return false;
+        
         const $lift = this.$$lift.find($cand => {
             if(!$cand.classList.contains('moving') && $cand.dataset.curr != floorNum) return $cand;
         });
@@ -136,8 +136,7 @@ class LiftSimulator{
 
     add_on_click_btn($btn,$floor,floorNum){
         $btn.addEventListener('click',async(e) =>{
-            $btn.disabled = true;
-            await this.on_click_btn(e, $floor, floorNum);
+            await this.on_click_btn($floor, floorNum);
         });
     }//add_on_click_btn
     
@@ -192,6 +191,7 @@ class LiftSimulator{
         for(let i=0;i<liftValue;i++){
             const $lift = document.createElement('DIV');
             $lift.dataset.idx = i;
+            $lift.dataset.curr = 1;
             $lift.classList.add('lift');
             ["left","right"].forEach(dir =>{
                 const $door = document.createElement('DIV');
